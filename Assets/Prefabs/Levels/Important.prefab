@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6657512843229418002}
   - component: {fileID: 5627235745342657468}
   m_Layer: 0
-  m_Name: CameraMovemnt
+  m_Name: CameraMovement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activityType: 1
   moveSpeed: 0.1
+  cameraBounds: {x: 3, y: 3}
 --- !u!1 &3828653299366524336
 GameObject:
   m_ObjectHideFlags: 0
