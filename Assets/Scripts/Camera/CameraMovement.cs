@@ -9,6 +9,7 @@ namespace Camera
     {
         [SerializeField] private float moveSpeed;
         [SerializeField] private Vector2 cameraBounds;
+        [SerializeField] private AnimationCurve movementSpeedCurve;
         private Vector3 _lastMousePosition;
         private bool _dragging;
 
@@ -54,7 +55,7 @@ namespace Camera
                 var newPosition = Vector3.Lerp(
                     cameraTransform.position,
                     cameraTransform.position - deltaPosition,
-                    moveSpeed);
+                    GetMovementSpeedFromCurve(deltaPosition.magnitude));
 
                 //Using cinemachine would have allowed for a more flexible approach
                 //Using a polygon collider per scene, instead of hard coded values
@@ -67,6 +68,12 @@ namespace Camera
                 CameraHolder.Instance.MainCamera.transform.position = newPositionClamped;
                 _lastMousePosition = mousePosition;
             }
+        }
+
+        private float GetMovementSpeedFromCurve(float delta)
+        {
+            delta = Mathf.Clamp01(delta);
+            return movementSpeedCurve.Evaluate(delta);
         }
     }
 }
