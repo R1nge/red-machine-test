@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activityType: 1
-  moveSpeed: 20
+  moveSpeed: 0.1
 --- !u!1 &3828653299366524336
 GameObject:
   m_ObjectHideFlags: 0
