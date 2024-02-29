@@ -9,7 +9,9 @@ https://github.com/R1nge/red-machine-test/assets/59400159/a8da7a10-20b1-4954-aa0
 В классе ClickObserver, подписался на ClickHandler.DragStartEvent  
 Там же проверяю стейт, если не Connecting, то  
 ClickObserver отправляет PlayerFingerPlaced в EventControllers  
-PlayerFingerPlaced - мой евент, созданный по аналогу уже созданных  
+PlayerFingerPlaced - мой евент, созданный по аналогу уже созданных 
+PlayerStateObserver подписывается на PlayerFingerPlaced и обновляет стейт на PlayerState.Scrolling  
 CameraMovement подписывается на PlayerFingerPlaced и PlayerFingerRemoved  
-И обновляет свой внутренний стейт (bool _dragging)  
+Проверяет, если PlayerState == Scrolling, то  
+Обновляет свой внутренний стейт (bool _dragging)  
 CameraMovement содержит всю логику передвижения  
